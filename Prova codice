@@ -1,0 +1,20 @@
+<!DOCTYPE html><html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirect QR</title>
+    <script>
+        fetch('redirect.json')
+            .then(response => response.json())
+            .then(data => {
+                window.location.href = data.url;
+            })
+            .catch(error => {
+                document.body.innerHTML = '<h1>Errore nel caricamento del reindirizzamento.</h1>';
+            });
+    </script>
+</head>
+<body>
+    <h1>Reindirizzamento in corso...</h1>
+</body>
+</html>
